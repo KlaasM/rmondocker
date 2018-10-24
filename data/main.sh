@@ -6,8 +6,8 @@ printf "RocketMod Unturned server on Docker\n"
 
 # main
 while true; do
-    package::update_steamcmd
-    package::update_rocket
-    package::update_unturned
-    package::start_server
+	package::update_steamcmd
+	package::update_rocket
+	package::update_unturned
+	package::start_server
 done

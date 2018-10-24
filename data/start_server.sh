@@ -3,7 +3,7 @@ steamclient="/data/steamcmd/linux32/steamclient.so"
 usteamclient="/data/unturned/Unturned_Data/Plugins/x86/steamclient.so"
 
 if [[ -f ${steamclient} && -f ${usteamclient} ]]; then
-    if ! diff ${steamclient} ${usteamclient} >/dev/null; then
+	if ! diff ${steamclient} ${usteamclient} >/dev/null; then
 		cp -f ${steamclient} ${usteamclient}
 	fi
 fi
@@ -22,5 +22,5 @@ if [ -f /data/unturned/RocketLauncher.exe ]; then
 else
 	printf "Failed to find Rocket launcher.\n"
 	printf "Try restarting your docker container.\n"
-    exit
+	exit
 fi
