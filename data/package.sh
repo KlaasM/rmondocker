@@ -59,12 +59,12 @@ function package::start_server() {
 function package::get_steam_user() {
 
     if [ -z ${STEAM_USERNAME+x} ]; then
-        echo "Error: STEAM_USERNAME not defined!";
+        printf "Error: STEAM_USERNAME not defined!\n";
         exit
     fi
 
     if [ -z ${STEAM_PASSWORD+x} ]; then
-        echo "Error: STEAM_PASSWORD not defined!";
+        printf "Error: STEAM_PASSWORD not defined!\n";
         exit
     fi
 }
