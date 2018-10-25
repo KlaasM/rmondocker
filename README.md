@@ -8,13 +8,13 @@ Note: this version supports only Unturned 3
 
 Get the latest version of rmondocker from GitHub:
 
-```console
+```bash
 git clone https://github.com/KlaasM/rmondocker.git
 ```
 
 Go into the `rmondocker` directory and build the Dockerfile:
 
-```console
+```bash
 docker build -t rmondocker .
 ```
 
@@ -22,7 +22,7 @@ docker build -t rmondocker .
 
 ### Hosting a simple local Unturned server
 
-```console
+```bash
 $ docker run --name some-server -d \
     -v /host/path/unturned:/data/unturned \
     -e STEAM_USERNAME="username" \
@@ -32,7 +32,7 @@ $ docker run --name some-server -d \
 
 ### Hosting a simple server with all options
 
-```console
+```bash
 $ docker run --name some-server -d \
     -v /host/path/unturned:/data/unturned \
     -p 27016-27017:27016-27017 \
@@ -44,7 +44,7 @@ $ docker run --name some-server -d \
 
 ### Exposing external ports
 
-```console
+```bash
 $ docker run --name some-server -d \
     -v /host/path/unturned:/data/unturned \
     -e STEAM_USERNAME="username" \
@@ -57,7 +57,7 @@ You can set the exposed ports by modifying the first port range to the two ports
 
 ### Specifying other server name
 
-```console
+```bash
 $ docker run --name some-server -d \
     -v /host/path/unturned:/data/unturned \
     -e STEAM_USERNAME="username" \
@@ -70,7 +70,7 @@ This option should give you the ability to share one persistent Unturned volume 
 
 ### Interactively
 
-```console
+```bash
 $ docker run --name some-server -it \
     -v /host/path/unturned:/data/unturned
     -e STEAM_USERNAME="username" \
@@ -81,6 +81,6 @@ $ docker run --name some-server -it \
 
 You could also attach to the container directly:
 
-```console
+```bash
 docker attach [OPTIONS] CONTAINER
 ```
