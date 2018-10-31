@@ -35,7 +35,7 @@ $ docker run --name some-server -d \
 ```bash
 $ docker run --name some-server -d \
     -v /host/path/unturned:/data/unturned \
-    -p 27016-27017:27016-27017 \
+    -p 27016-27017:27016-27017/udp \
     -e STEAM_USERNAME="username" \
     -e STEAM_PASSWORD="password" \
     -e SERVER_NAME="name"
@@ -49,7 +49,7 @@ $ docker run --name some-server -d \
     -v /host/path/unturned:/data/unturned \
     -e STEAM_USERNAME="username" \
     -e STEAM_PASSWORD="password" \
-    -p 27016-27017:27016-27017 \
+    -p 27016-27017:27016-27017/udp \
     rmondocker
 ```
 
@@ -75,7 +75,7 @@ $ docker run --name some-server -it \
     -v /host/path/unturned:/data/unturned
     -e STEAM_USERNAME="username" \
     -e STEAM_PASSWORD="password" \
-    -p 27016-27017:27016-27017 \
+    -p 27016-27017:27016-27017/udp \
     rocketondocker
 ```
 
