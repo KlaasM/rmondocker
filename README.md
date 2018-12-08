@@ -84,3 +84,9 @@ You could also attach to the container directly:
 ```bash
 docker attach [OPTIONS] CONTAINER
 ```
+
+Show logs:
+
+```bash
+docker logs [OPTIONS] CONTAINER
+```
