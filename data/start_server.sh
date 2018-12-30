@@ -21,6 +21,6 @@ if [ -f /data/unturned/RocketLauncher.exe ]; then
 	fi
 else
 	printf "Failed to find Rocket launcher.\n"
-	printf "Try restarting your docker container.\n"
+	printf "Restarting Docker container ..\n"
 	exit
 fi
