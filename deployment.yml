@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rmondocker
+  labels:
+    app: rmondocker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rmondocker
+  template:
+    metadata:
+      labels:
+        app: rmondocker
+    spec:
+      imagePullSecrets:
+      - name: pipeline-docker-registry
+      containers:
+      - name: rmondocker
+        image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
+./deployment.yaml
