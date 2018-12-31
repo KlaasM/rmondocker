@@ -4,7 +4,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: klaasm/rmondocker:v1
+      tag: klaasm/rmondocker:${CICD_EXECUTION_SEQUENCE}
       registry: 127.0.0.1:34269
 - name: deploy
   steps:
