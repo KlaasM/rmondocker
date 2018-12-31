@@ -1,0 +1,9 @@
+stages:
+- name: compile
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: klaasm/rmondocker:v1
+      registry: 127.0.0.1:34269
+timeout: 60
