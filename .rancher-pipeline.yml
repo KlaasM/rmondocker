@@ -6,4 +6,8 @@ stages:
       buildContext: .
       tag: klaasm/rmondocker:v1
       registry: 127.0.0.1:34269
+- name: deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
 timeout: 60
