@@ -1,5 +1,5 @@
 #!/bin/bash
-function package::update_steamcmd() {
+function update_steamcmd() {
 
 	if [ ! -d "/data/steamcmd" ]; then
 		mkdir /data/steamcmd
@@ -12,7 +12,7 @@ function package::update_steamcmd() {
 	rm -f /data/steamcmd/steamcmd.tar.gz
 }
 
-function package::update_rocket() {
+function update_rocket() {
 
 	if [ ! -d "/data/rocket" ]; then
 		mkdir /data/rocket
@@ -25,7 +25,7 @@ function package::update_rocket() {
 	rm -f /data/rocket/rocket.zip
 
 	if [ ! -d "/data/unturned" ]; then
-		package::unturned
+		unturned
 	fi
 
 	if [ -d "/data/unturned/Modules" ]; then
@@ -37,16 +37,16 @@ function package::update_rocket() {
 	chmod +x /data/unturned/RocketLauncher.exe
 }
 
-function package::update_unturned() {
+function update_unturned() {
 
 	printf "Updating Unturned..\n"
 
-	package::get_steam_user
+	get_steam_user
 
 	/data/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformBitness 32 +login "${STEAM_USERNAME}" "${STEAM_PASSWORD}" +force_install_dir "/data/unturned" +app_update 304930 +exit
 }
 
-function package::start_server() {
+function start_server() {
 
 	if [ ! -f "/data/unturned/start_server.sh" ]; then
 		mv /data/start_server.sh /data/unturned/start_server.sh
@@ -56,7 +56,7 @@ function package::start_server() {
 	/data/unturned/start_server.sh
 }
 
-function package::get_steam_user() {
+function get_steam_user() {
 
 	if [ -z ${STEAM_USERNAME+x} ]; then
 		printf "Error: STEAM_USERNAME not defined!\n";
